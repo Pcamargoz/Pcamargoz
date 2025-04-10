@@ -1,6 +1,6 @@
 # 👨‍💻 Pedro Camargo
 
-## Desenvovedor FullStack & Entusiasta de Cybersegurança ⚡🔐
+## Desenvolvedor FullStack & Entusiasta de Cybersegurança ⚡🔐
 
 Olá! Eu sou o **Pedro Camargo** e sou apaixonado por tecnologia! 🚀 Atualmente, estou investindo intensamente na minha evolução profissional através dos cursos na [DIO](https://www.dio.me) e da graduação em **Análise e Desenvolvimento de Sistemas** na **FACENS** – a melhor faculdade de Sorocaba! 🎓✨
 
@@ -12,6 +12,14 @@ Tenho experiência prática e estou sempre aprimorando minhas habilidades em:
 
 Estou aplicando esses conhecimentos em projetos desafiadores que me impulsionam a sair da zona de conforto e inovar constantemente. Vamos juntos transformar o mundo com tecnologia? 💡🔥
 
+---
+
+### 🌐 Conecte-se comigo
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0e76a8?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pedro-carmargo01/)
+[![Instagram](https://img.shields.io/badge/-Instagram-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/p.camargoz/)
+
+---
 
 <p align="left">
     <a href="https://github.com/Pcamargoz?tab=repositories&q=&type=&language=&sort=stargazers">
@@ -34,38 +42,36 @@ Estou aplicando esses conhecimentos em projetos desafiadores que me impulsionam 
 
 ### 🤖 Linguagens e Tecnologias
 
-<img 
-    align="left" 
-    alt="JAVA"
+<p align="left">
+  <img 
+    alt="JAVA" 
     title="JAVA" 
     width="30px" 
-    style="padding-right: 10px;"
-src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />    
-
-<img 
-    align="left" 
+    style="padding-right: 10px;" 
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
+  />
+  <img 
     alt="Python" 
-    title="Python"
+    title="Python" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-           
-<img 
-    align="left" 
-    alt="Git"
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
+  />
+  <img 
+    alt="Git" 
     title="Git" 
     width="30px" 
     style="padding-right: 10px;" 
     src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-/>
-<img 
-    align="left" 
-    alt="React"
-    title="React" 
+  />
+  <img 
+    alt="Linux" 
+    title="Linux" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
-        
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+  />
+</p>
 
 <br/>
 <br/>
