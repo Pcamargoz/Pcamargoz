@@ -74,8 +74,6 @@ Estou aplicando esses conhecimentos em projetos desafiadores que me impulsionam 
 </p>
 
 <br/>
-<br/>
-
 ### 📊 Estatísticas
 
 <p>
