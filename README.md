@@ -1,6 +1,6 @@
 # 👨‍💻 Pedro Camargo
 
-## Desenvolvedor FullStack & Entusiasta de Cybersegurança ⚡🔐
+## Desenvolvedor FullStack & Foco em BackEnd (Java)⚡🔐
 
 Olá! Eu sou o **Pedro Camargo** e sou apaixonado por tecnologia! 🚀 Atualmente, estou investindo intensamente na minha evolução profissional através dos cursos na [DIO](https://www.dio.me) e da graduação em **Análise e Desenvolvimento de Sistemas** na **FACENS** – a melhor faculdade de Sorocaba! 🎓✨
 
