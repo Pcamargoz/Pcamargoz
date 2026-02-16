@@ -69,13 +69,18 @@ Busco evoluir constantemente em **BackEnd, Cloud e DevOps**, sempre priorizando 
 
 ---
 
-## 🤖 Linguagens e Tecnologias
+## 🤖 Linguagens, Ferramentas e Tecnologias
 
 <p align="left">
   <img alt="JAVA" title="JAVA" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"/>
   <img alt="Python" title="Python" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"/>
   <img alt="Git" title="Git" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"/>
   <img alt="Linux" title="Linux" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"/>
+  <img alt="Spring" title="Spring / Spring Boot" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"/>
+  <img alt="Postman" title="Postman" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"/>
+  <img alt="Docker" title="Docker" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"/>
+  <img alt="PostgreSQL" title="PostgreSQL" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"/>
+  <img alt="REST" title="REST API" height="28px" style="padding-left: 6px;" src="https://img.shields.io/badge/REST-API-008ee4?style=for-the-badge&logo=web&logoColor=white"/>
 </p>
 
 ---
@@ -100,7 +105,7 @@ Projetos focados em APIs REST, lógica de negócio, banco de dados e boas práti
     align="left" 
     alt="GitHub Stats" 
     height="200" 
-    style="padding-right: 10px;" 
+    style="padding-right: 10px" 
     src="https://github-readme-stats.vercel.app/api?username=Pcamargoz&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" 
   />
   <img 
