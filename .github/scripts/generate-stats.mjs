@@ -47,6 +47,19 @@ const THEMES = {
 
 // Aspas SIMPLES de proposito: estes valores vao dentro de atributos XML
 // delimitados por aspas duplas — aspas duplas aqui quebrariam o documento.
+// Cores oficiais do Linguist. A GraphQL devolve a cor junto com a linguagem,
+// mas o caminho REST (e o fallback por rate limit) nao devolve — sem este mapa
+// o card sairia inteiro em cinza.
+const LANG_COLORS = {
+  Java: "#b07219", HTML: "#e34c26", CSS: "#663399", TypeScript: "#3178c6",
+  JavaScript: "#f1e05a", Python: "#3572A5", Dockerfile: "#384d54", Shell: "#89e051",
+  SCSS: "#c6538c", Kotlin: "#A97BFF", "C#": "#178600", PHP: "#4F5D95", Go: "#00ADD8",
+  Ruby: "#701516", Rust: "#dea584", Vue: "#41b883", Svelte: "#ff3e00", Makefile: "#427819",
+  PLpgSQL: "#336790", TSQL: "#e38c00", Batchfile: "#C1F12E", PowerShell: "#012456",
+  "Jupyter Notebook": "#DA5B0B", EJS: "#a91e50", Handlebars: "#f7931e", Procfile: "#a0a0a0",
+};
+const DEFAULT_COLOR = "#8B949E";
+
 const FONT = `'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif`;
 const MONO = `ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace`;
 
@@ -126,9 +139,10 @@ function summariseLanguages(perRepo) {
     if (!total) continue; // repositorio sem codigo detectado
     counted++;
     for (const { name, size, color } of langs) {
-      const cur = acc.get(name) ?? { share: 0, color: color || "#8B949E" };
+      const known = color || LANG_COLORS[name] || DEFAULT_COLOR;
+      const cur = acc.get(name) ?? { share: 0, color: known };
       cur.share += size / total; // fracao dentro do proprio repositorio
-      if (color) cur.color = color;
+      cur.color = known;
       acc.set(name, cur);
     }
   }

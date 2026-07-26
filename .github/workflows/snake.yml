@@ -56,6 +56,18 @@ jobs:
         with:
           # Le o dono do repositorio automaticamente — sem nome fixo no arquivo.
           github_user_name: ${{ github.repository_owner }}
+
+          # Token usado para ler o calendario de contribuicoes.
+          #
+          # O GITHUB_TOKEN automatico tem escopo do REPOSITORIO, nao do usuario:
+          # ele enxerga apenas as contribuicoes publicas, e a grade sai quase
+          # vazia (~294 no ultimo ano) enquanto o perfil mostra 1.118. Com um
+          # PAT de escopo `read:user` + `repo` em METRICS_TOKEN, as contribuicoes
+          # privadas entram na conta e a cobrinha percorre a grade real.
+          #
+          # Sem o secret cadastrado, cai no token automatico e continua rodando.
+          github_token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark

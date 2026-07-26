@@ -269,7 +269,8 @@ Sistema de usuários e contratos escrito em Java puro, sem framework, para enten
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-light.svg">
-  <img alt="Linha do tempo: 2026 Consultor de Implantação na Faktory Softwares; 2026 Estagiário de Implantação na Faktory Softwares; 2025 Análise e Desenvolvimento de Sistemas na Facens; 2023 Implantação de Serviços de IA em Nuvem no SENAI-SP; 2021 Informática e Empreendedorismo na Nippo e SENAI-SP" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-dark.svg" width="100%">
+  <img alt="Linha do tempo: 2026 Consultor de Implantação na Faktory Softwares; 2026 Estagiário de Implantação na Faktory Softwares; 2025 Profissionalização em Desenvolvimento com mais de 100 certificados em tecnologia; 2025 Análise e Desenvolvimento de Sistemas na Facens; 2023 Implantação de Serviços de IA em Nuvem no SENAI-SP; 2021 Informática e Empreendedorismo na Nippo e SENAI-SP" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-dark.svg" width="100%">
+<!-- Para editar a trajetória: altere ITEMS em .github/scripts/generate-timeline.mjs e rode `node .github/scripts/generate-timeline.mjs` -->
 </picture>
 
 </div>

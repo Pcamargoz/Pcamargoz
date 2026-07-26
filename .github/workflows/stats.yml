@@ -53,8 +53,15 @@ jobs:
 
       - name: Gerar cards (claro e escuro)
         env:
-          # Token automatico do job — nenhum PAT precisa ser cadastrado.
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # O GITHUB_TOKEN automatico tem escopo do REPOSITORIO, nao do usuario:
+          # `restrictedContributionsCount` volta 0 e o contributionCalendar so
+          # conta o que ele enxerga — dai o card mostrar ~349 contribuicoes de
+          # sempre enquanto o perfil marca 1.118 so no ultimo ano.
+          #
+          # METRICS_TOKEN e um PAT (classic) com `read:user` + `repo`, que ve as
+          # contribuicoes privadas. Sem ele, cai no token automatico e os numeros
+          # voltam a ser apenas os publicos.
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           GITHUB_LOGIN: ${{ github.repository_owner }}
         run: node .github/scripts/generate-stats.mjs
 

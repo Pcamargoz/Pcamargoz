@@ -69,7 +69,15 @@
       "Bash(node gen-timeline.mjs)",
       "PowerShell($ok=$true; foreach \\($f in @\\(\"header-dark\",\"header-light\",\"timeline-dark\",\"timeline-light\"\\)\\) { $p=\"assets\\\\$f.svg\"; try { $x=[xml]\\([System.IO.File]::ReadAllText\\(\\(Resolve-Path $p\\)\\)\\); Write-Output \"XML OK: $f\" } catch { $ok=$false; Write-Output \"FALHOU: $f -> $\\($_.Exception.Message\\)\" } }; if\\($ok\\){Write-Output \">>> Todos validos\"})",
       "PowerShell(foreach \\($f in @\\(\"stats-dark\",\"stats-light\",\"langs-dark\",\"langs-light\"\\)\\) { $p=\"assets\\\\$f.svg\"; try { $x=[xml]\\([System.IO.File]::ReadAllText\\(\\(Resolve-Path $p\\)\\)\\); Write-Output \"XML OK: $f  viewBox=$\\($x.svg.viewBox\\)\" } catch { Write-Output \"FALHOU: $f -> $\\($_.Exception.Message\\)\" } })",
-      "Bash(tr -d '><\\\\/text')"
+      "Bash(tr -d '><\\\\/text')",
+      "PowerShell(foreach \\($f in @\\(\"timeline-dark\",\"timeline-light\"\\)\\) { $p=\"assets\\\\$f.svg\"; try { [xml]\\([System.IO.File]::ReadAllText\\(\\(Resolve-Path $p\\)\\)\\) | Out-Null; Write-Output \"XML OK: $f\" } catch { Write-Output \"FALHOU: $f -> $\\($_.Exception.Message\\)\" } })",
+      "Bash(node .github/scripts/generate-timeline.mjs)",
+      "Bash(node --check .github/scripts/generate-timeline.mjs)",
+      "Bash(gh auth *)",
+      "Read(//tmp/**)",
+      "Bash(awk '{s+=$1} END {print \"Total publico \\(anonimo\\):\", s}')",
+      "Bash(awk '{s+=$1} END {print \"Total publico:\", s, \"dias com atividade:\", NR}')",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/Platane/snk/v3/action.yml\")"
     ]
   }
 }
