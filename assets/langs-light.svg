@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200" role="img" aria-label="Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 26.3%, TypeScript 10.5%, CSS 5.3%.">
   <title>Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 26.3%, TypeScript 10.5%, CSS 5.3%.</title>
+=======
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 224" width="420" height="224" role="img" aria-label="Distribuição de linguagens nos repositórios públicos de Pcamargoz: HTML 60.5%, TypeScript 23.4%, CSS 7.0%, JavaScript 5.4%, Java 3.7%, Dockerfile 0.0%.">
+  <title>Distribuição de linguagens nos repositórios públicos de Pcamargoz: HTML 60.5%, TypeScript 23.4%, CSS 7.0%, JavaScript 5.4%, Java 3.7%, Dockerfile 0.0%.</title>
+>>>>>>> 92131292f1549b60748c184d49240a51cd2a2cd7
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F6F8FA"/>
@@ -9,6 +14,7 @@
       <stop offset="0%" stop-color="#4C8C2B"/><stop offset="100%" stop-color="#1E6FD9"/>
     </linearGradient>
   </defs>
+<<<<<<< HEAD
   <rect x="0.5" y="0.5" width="419" height="199" rx="12" fill="url(#bg)" stroke="#D0D7DE"/>
   <path d="M12 1 H408 A11 11 0 0 1 419 12 V4 H1 V12 A11 11 0 0 1 12 1 Z" fill="url(#acc)"/>
   <rect x="1" y="1" width="418" height="4" fill="url(#acc)"/>
@@ -32,4 +38,37 @@
   <text x="382" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">5.3%</text>
   <rect x="26" y="170" width="368" height="1" fill="#E4E8EC"/>
   <text x="26" y="188" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#475569">Cada repositório pesa igual, para nenhum projeto isolado distorcer o resultado.</text>
+=======
+  <rect x="0.5" y="0.5" width="419" height="223" rx="12" fill="url(#bg)" stroke="#D0D7DE"/>
+  <path d="M12 1 H408 A11 11 0 0 1 419 12 V4 H1 V12 A11 11 0 0 1 12 1 Z" fill="url(#acc)"/>
+  <rect x="1" y="1" width="418" height="4" fill="url(#acc)"/>
+  <text x="26" y="42" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#4C8C2B">Linguagens nos repositórios</text>
+  <text x="26" y="62" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="11" fill="#475569" letter-spacing="1.2">POR VOLUME DE CÓDIGO</text>
+    <rect x="26.00" y="82" width="222.80" height="9" fill="#e34c26"/>
+  <rect x="248.80" y="82" width="86.10" height="9" fill="#3178c6"/>
+  <rect x="334.90" y="82" width="25.60" height="9" fill="#663399"/>
+  <rect x="360.50" y="82" width="19.70" height="9" fill="#f1e05a"/>
+  <rect x="380.20" y="82" width="13.73" height="9" fill="#b07219"/>
+  <rect x="393.93" y="82" width="1.50" height="9" fill="#384d54"/>
+  <circle cx="31" cy="114" r="5" fill="#e34c26"/>
+  <text x="44" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">HTML</text>
+  <text x="198" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">60.5%</text>
+  <circle cx="215" cy="114" r="5" fill="#3178c6"/>
+  <text x="228" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">TypeScript</text>
+  <text x="382" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">23.4%</text>
+  <circle cx="31" cy="138" r="5" fill="#663399"/>
+  <text x="44" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">CSS</text>
+  <text x="198" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">7.0%</text>
+  <circle cx="215" cy="138" r="5" fill="#f1e05a"/>
+  <text x="228" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">JavaScript</text>
+  <text x="382" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">5.4%</text>
+  <circle cx="31" cy="162" r="5" fill="#b07219"/>
+  <text x="44" y="166" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">Java</text>
+  <text x="198" y="166" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">3.7%</text>
+  <circle cx="215" cy="162" r="5" fill="#384d54"/>
+  <text x="228" y="166" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">Dockerfile</text>
+  <text x="382" y="166" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">0.0%</text>
+  <rect x="26" y="194" width="368" height="1" fill="#E4E8EC"/>
+  <text x="26" y="212" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#475569">Volume de código por linguagem — não indica nível de domínio.</text>
+>>>>>>> 92131292f1549b60748c184d49240a51cd2a2cd7
 </svg>
