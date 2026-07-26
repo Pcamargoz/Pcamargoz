@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" width="1000" height="250" role="img" aria-label="Pedro César Camargo dos Santos — Back-end Developer, Java e Spring Boot, Consultor de Implantação ERP">
+  <title>Pedro César Camargo dos Santos — Back-end Developer | Java &amp; Spring Boot | ERP Implementation Consultant</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="55%" stop-color="#12181F"/>
+      <stop offset="100%" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6DB33F"/>
+      <stop offset="55%" stop-color="#2EA6C7"/>
+      <stop offset="100%" stop-color="#58A6FF"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6DB33F" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#6DB33F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Malha discreta de fundo: remete a arquitetura / grid de sistemas -->
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#8B949E" stroke-width="0.5" stroke-opacity="0.10"/>
+    </pattern>
+
+    <!-- Um clipPath por frase: o retangulo cresce em "steps" e produz o efeito de digitacao -->
+    <clipPath id="t0"><rect class="type type0" x="176" y="176" width="0" height="30"/></clipPath>
+    <clipPath id="t1"><rect class="type type1" x="176" y="176" width="0" height="30"/></clipPath>
+    <clipPath id="t2"><rect class="type type2" x="176" y="176" width="0" height="30"/></clipPath>
+    <clipPath id="t3"><rect class="type type3" x="176" y="176" width="0" height="30"/></clipPath>
+    <clipPath id="t4"><rect class="type type4" x="176" y="176" width="0" height="30"/></clipPath>
+  </defs>
+
+  <style>
+    .name   { font-family: "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 46px; fill: #E6EDF3; letter-spacing: -0.4px; }
+    .role   { font-family: "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 18px; fill: #58A6FF; letter-spacing: 0.6px; }
+    .sep    { fill: #8B949E; }
+    .mono   { font-family: ui-monospace, "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace; font-size: 20px; }
+    .prompt { fill: #6DB33F; }
+    .line   { fill: #E6EDF3; }
+    .kicker { font-family: ui-monospace, "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace; font-size: 13px; fill: #8B949E; letter-spacing: 2.4px; }
+
+    /* Cada frase fica visivel por 4s dentro de um ciclo de 20s (5 frases). */
+    @keyframes fade { 0% {opacity:0} 1.5% {opacity:1} 18.5% {opacity:1} 20% {opacity:0} 100% {opacity:0} }
+    .phrase { opacity: 0; animation: fade 20s linear infinite; }
+    .p0 { animation-delay:  0s; } .p1 { animation-delay: -16s; } .p2 { animation-delay: -12s; }
+    .p3 { animation-delay: -8s; } .p4 { animation-delay: -4s; }
+
+    /* Largura final = numero de caracteres x ~12px (monospace 20px). */
+    @keyframes ty0 { 0%{width:0} 7%{width:230px} 100%{width:230px} }
+    @keyframes ty1 { 0%{width:0} 7%{width:230px} 100%{width:230px} }
+    @keyframes ty2 { 0%{width:0} 9%{width:352px} 100%{width:352px} }
+    @keyframes ty3 { 0%{width:0} 10%{width:424px} 100%{width:424px} }
+    @keyframes ty4 { 0%{width:0} 11%{width:544px} 100%{width:544px} }
+    .type  { animation-duration: 20s; animation-timing-function: steps(24, end); animation-iteration-count: infinite; }
+    .type0 { animation-name: ty0; animation-delay:  0s; }
+    .type1 { animation-name: ty1; animation-delay: -16s; }
+    .type2 { animation-name: ty2; animation-delay: -12s; }
+    .type3 { animation-name: ty3; animation-delay: -8s; }
+    .type4 { animation-name: ty4; animation-delay: -4s; }
+
+    /* Cursor: acompanha a borda do clip e pisca quando a frase esta completa. */
+    @keyframes caret { 0%{transform:translateX(0)} 35%{transform:translateX(400px)} 100%{transform:translateX(400px)} }
+    @keyframes blink { 0%,45%{opacity:0.9} 55%,100%{opacity:0.25} }
+    .caret { animation: caret 4s steps(24,end) infinite, blink 1s steps(1,end) infinite; }
+
+    /* Respeita quem prefere menos movimento: mostra a primeira frase estatica. */
+    @media (prefers-reduced-motion: reduce) {
+      .phrase, .type, .caret { animation: none; }
+      .p0 { opacity: 1; }
+      .type0 { width: 230px; }
+      .caret { opacity: 0; }
+    }
+  </style>
+
+  <rect width="1000" height="250" rx="14" fill="url(#bg)"/>
+  <rect width="1000" height="250" rx="14" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1000" height="4" rx="2" fill="url(#accent)"/>
+  <rect x="56" y="196" width="420" height="1" fill="url(#fade)"/>
+
+  <!-- Barra de acento vertical, ancorando o bloco de texto -->
+  <rect x="56" y="58" width="4" height="86" rx="2" fill="url(#accent)"/>
+
+  <text class="kicker" x="56" y="40">BACK-END ENGINEERING · ERP · CLOUD</text>
+  <text class="name"   x="80" y="96">Pedro César Camargo dos Santos</text>
+  <text class="role"   x="80" y="132">Back-end Developer <tspan class="sep">·</tspan> Java &amp; Spring Boot <tspan class="sep">·</tspan> ERP Implementation Consultant</text>
+
+  <!-- Linha de terminal com animacao de digitacao -->
+  <text class="mono prompt" x="56" y="199">~$</text>
+  <g clip-path="url(#t0)"><text class="mono line phrase p0" x="176" y="199">Back-end Developer</text></g>
+  <g clip-path="url(#t1)"><text class="mono line phrase p1" x="176" y="199">Java &amp; Spring Boot</text></g>
+  <g clip-path="url(#t2)"><text class="mono line phrase p2" x="176" y="199">ERP Implementation Consultant</text></g>
+  <g clip-path="url(#t3)"><text class="mono line phrase p3" x="176" y="199">APIs, Cloud &amp; Software Architecture</text></g>
+  <g clip-path="url(#t4)"><text class="mono line phrase p4" x="176" y="199">Building software for real business problems.</text></g>
+  <rect class="caret" x="176" y="180" width="10" height="24" rx="1" fill="#6DB33F"/>
+
+  <text class="kicker" x="56" y="230">SOROCABA · SP · BRASIL</text>
+</svg>

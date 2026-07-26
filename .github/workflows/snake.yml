@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Gera a animacao da "cobrinha" que percorre o grafico de contribuicoes.
+#
+# O que este workflow faz:
+#   1. Le o grafico de contribuicoes publico do dono do repositorio;
+#   2. Gera dois SVGs animados (tema claro e tema escuro);
+#   3. Publica os arquivos na branch orfa `output`.
+#
+# O README consome os arquivos por raw.githubusercontent.com usando <picture>,
+# alternando automaticamente entre claro e escuro conforme o tema do GitHub.
+#
+# Nao e necessario criar nenhum secret: o GITHUB_TOKEN automatico do Actions
+# ja tem permissao suficiente para escrever na branch `output` deste repo.
+# ---------------------------------------------------------------------------
+
+name: Generate Snake Animation
+
+on:
+  schedule:
+    # Uma vez por dia, as 03:17 UTC (00:17 em Brasilia).
+    # Horario "quebrado" de proposito: reduz a fila de agendamentos do GitHub,
+    # que costuma atrasar jobs marcados na hora cheia.
+    - cron: "17 3 * * *"
+
+  # Permite disparar manualmente pela aba Actions (util no primeiro run).
+  workflow_dispatch:
+
+  # Regera a animacao sempre que o proprio workflow for alterado.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/snake.yml"
+
+# Permissoes minimas: o job so precisa escrever conteudo (a branch `output`).
+permissions:
+  contents: write
+
+# Se um novo run comecar enquanto outro esta em andamento, cancela o anterior.
+concurrency:
+  group: snake-animation
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    name: Gerar e publicar SVGs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # Gera os SVGs em ./dist. Nao faz checkout do repo de proposito:
+      # a action so precisa do nome de usuario, nao do codigo.
+      - name: Gerar animacao (claro e escuro)
+        uses: Platane/snk@v3
+        id: snake
+        with:
+          # Le o dono do repositorio automaticamente — sem nome fixo no arquivo.
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      # Publica ./dist na branch orfa `output`, sobrescrevendo o conteudo anterior.
+      - name: Publicar na branch output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore(snake): atualiza animacao de contribuicoes"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------------------
+# Gera os cards de estatisticas do README dentro deste proprio repositorio.
+#
+# Por que nao usar um servico publico (github-readme-stats e similares):
+# as instancias compartilhadas ficam frequentemente indisponiveis por rate
+# limit, e o card quebra no perfil sem aviso. Aqui os SVGs sao commitados no
+# repo — o README carrega arquivos estaticos que nunca somem.
+#
+# Nao e preciso criar nenhum secret: o GITHUB_TOKEN automatico do Actions ja
+# consegue ler dados publicos do perfil pela GraphQL API.
+# ---------------------------------------------------------------------------
+
+name: Generate GitHub Stats Cards
+
+on:
+  schedule:
+    # Diariamente as 03:41 UTC (00:41 em Brasilia), fora da hora cheia
+    # para nao cair na fila de agendamentos do GitHub.
+    - cron: "41 3 * * *"
+
+  workflow_dispatch:
+
+  # Regenera quando o gerador ou o proprio workflow mudarem.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/scripts/generate-stats.mjs"
+      - ".github/workflows/stats.yml"
+
+# Permissao minima: escrever os SVGs de volta na branch main.
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-cards
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    name: Gerar e commitar cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configurar Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Gerar cards (claro e escuro)
+        env:
+          # Token automatico do job — nenhum PAT precisa ser cadastrado.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: ${{ github.repository_owner }}
+        run: node .github/scripts/generate-stats.mjs
+
+      - name: Commitar se houver mudanca
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats-*.svg assets/langs-*.svg
+          # Sem diferenca real nos numeros? Encerra sem criar commit vazio.
+          if git diff --staged --quiet; then
+            echo "Nenhuma alteracao nos cards."
+            exit 0
+          fi
+          git commit -m "chore(stats): atualiza cards de estatisticas"
+          git push
