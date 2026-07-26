@@ -205,20 +205,6 @@ Aplicação web para montar times de agentes especializados: catálogo de papéi
 
 <br>
 
-### Agenda Inteligente — cronogramas e ordens de serviço
-
-Ferramenta para consultorias gerenciarem cronogramas, atendimentos e ordens de serviço: aprovação do cliente, execução com checklist, geração da OS em PDF, envio por e-mail, débito de saldo de horas e assinatura por link público.
-
-**Minha contribuição:** projeto completo, do modelo de dados às funções serverless.
-
-**Stack:** Node.js · funções serverless na Vercel · PostgreSQL (Neon) · SQL com `jsonb` · Nodemailer
-
-**Decisão técnica:** o app funciona por inteiro sem banco configurado — o estado principal vive no cliente, e o PostgreSQL entra apenas para publicar a OS e permitir a assinatura em outro dispositivo. O débito de horas é idempotente, evitando cobrança duplicada quando uma requisição é reenviada.
-
-[`Código`](https://github.com/Pcamargoz/Agenda-Inteligente-Flow) · [`Aplicação`](https://agenda-inteligente-flow.vercel.app)
-
-<br>
-
 ### SwapStudy — JDBC e o padrão DAO na mão
 
 Sistema de usuários e contratos escrito em Java puro, sem framework, para entender por dentro o que o Spring Data abstrai: conexão, transação, tratamento de erro de integridade e mapeamento objeto-relacional.
@@ -246,20 +232,17 @@ Sistema de usuários e contratos escrito em Java puro, sem framework, para enten
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/stats-light.svg">
-  <img alt="Atividade no GitHub de Pcamargoz: contribuições totais, commits, pull requests, code reviews, issues e repositórios públicos" height="212" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/stats-dark.svg">
+  <img alt="Atividade no GitHub de Pcamargoz: contribuições totais, commits, pull requests, code reviews, issues e repositórios públicos" height="230" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/stats-dark.svg">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/langs-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/langs-light.svg">
-  <img alt="Distribuição de linguagens nos repositórios públicos de Pcamargoz, por volume de código" height="212" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/langs-dark.svg">
+  <img alt="Distribuição de linguagens nos repositórios públicos de Pcamargoz, por volume de código" height="230" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/langs-dark.svg">
 </picture>
 
-<sub>
+<sub>Cards gerados diariamente por GitHub Actions neste repositório — sem depender de serviço externo.</sub>
 
-Cards gerados diariamente por GitHub Actions neste repositório — sem depender de serviço externo.<br>
-O gráfico de linguagens mede **volume de código por linguagem** nos repositórios públicos, não nível de domínio.
-
-</sub>
+<sub>Linguagens medidas como <b>composição média por repositório</b> — cada projeto pesa igual, e a métrica não indica nível de domínio.</sub>
 
 </div>
 
@@ -281,22 +264,15 @@ O gráfico de linguagens mede **volume de código por linguagem** nos repositór
 
 ## Trajetória · <sub>Journey</sub>
 
-```text
-2026 ──▶  Consultor de Implantação · Faktory Softwares
-          Implantação de ERP, treinamento e validação de produto.
-          Linha de frente do Faktory Flow.
+<div align="center">
 
-2026 ──▶  Estagiário de Implantação · Faktory Softwares
-          Análise de processos e parametrização de sistema.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-light.svg">
+  <img alt="Linha do tempo: 2026 Consultor de Implantação na Faktory Softwares; 2026 Estagiário de Implantação na Faktory Softwares; 2025 Análise e Desenvolvimento de Sistemas na Facens; 2023 Implantação de Serviços de IA em Nuvem no SENAI-SP; 2021 Informática e Empreendedorismo na Nippo e SENAI-SP" src="https://raw.githubusercontent.com/Pcamargoz/Pcamargoz/main/assets/timeline-dark.svg" width="100%">
+</picture>
 
-2025 ──▶  Análise e Desenvolvimento de Sistemas · Facens  (2025–2027)
-          Representante de turma. Foco em engenharia de back-end.
-
-2023 ──▶  Implantação de Serviços de IA em Nuvem · SENAI-SP
-          Inglês como Segundo Idioma · Nippo / Pearson  (2023–2024)
-
-2021 ──▶  Informática e Empreendedorismo · Nippo / SENAI-SP
-```
+</div>
 
 **Certificações e formação complementar**<br>
 AWS Cloud Practitioner · Fundamentos de Cibersegurança · Implantação de Serviços de IA em Nuvem (SENAI-SP) · Inglês como Segundo Idioma (Pearson) · Liderança e representação acadêmica na Facens
@@ -362,11 +338,8 @@ I use **AI as a strategic tool** — for technical research, documentation and p
 
 <div align="center">
 
-<sub>
+**Construindo conhecimento sólido para transformar regras de negócio em software confiável.**
 
-**Construindo conhecimento sólido para transformar regras de negócio em software confiável.**<br>
-<i>Building solid foundations to turn business rules into reliable software.</i>
-
-</sub>
+<sub><i>Building solid foundations to turn business rules into reliable software.</i></sub>
 
 </div>

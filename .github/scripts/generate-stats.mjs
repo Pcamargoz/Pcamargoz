@@ -5,10 +5,15 @@
 // sofrem com rate limit e ficam fora do ar. Gerando aqui, o README nunca
 // depende de um servico de terceiros para renderizar.
 //
-// Consome apenas a GraphQL API do GitHub, autenticada com o GITHUB_TOKEN
-// automatico do Actions — nenhum secret ou PAT precisa ser criado.
+// Duas fontes de dados, escolhidas automaticamente:
+//   - COM GITHUB_TOKEN  -> GraphQL API. Numeros completos (inclui code reviews
+//     e o total do calendario de contribuicoes). E o caminho usado no Actions,
+//     com o GITHUB_TOKEN automatico do job — nenhum secret precisa ser criado.
+//   - SEM token         -> REST + Search API publica. Numeros um pouco mais
+//     enxutos, mas permite gerar os cards na maquina local sem configurar nada.
 //
-// Uso: GITHUB_TOKEN=... GITHUB_LOGIN=Pcamargoz node generate-stats.mjs
+// Uso no Actions:  GITHUB_TOKEN=... GITHUB_LOGIN=Pcamargoz node generate-stats.mjs
+// Uso local:       GITHUB_LOGIN=Pcamargoz node .github/scripts/generate-stats.mjs
 // Requer Node 20+ (fetch nativo). Sem dependencias externas.
 // ---------------------------------------------------------------------------
 
@@ -20,8 +25,8 @@ const LOGIN = process.env.GITHUB_LOGIN;
 const TOKEN = process.env.GITHUB_TOKEN;
 const OUT_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "../../assets");
 
-if (!LOGIN || !TOKEN) {
-  console.error("Faltam as variaveis de ambiente GITHUB_LOGIN e/ou GITHUB_TOKEN.");
+if (!LOGIN) {
+  console.error("Falta a variavel de ambiente GITHUB_LOGIN.");
   process.exit(1);
 }
 
@@ -104,7 +109,95 @@ const CONTRIB_QUERY = `
   }
 `;
 
-async function collect() {
+// Distribuicao de linguagens como COMPOSICAO MEDIA POR REPOSITORIO.
+//
+// Somar bytes de todos os repositorios seria enganoso: um unico projeto com um
+// HTML gigante afunda todo o resto do perfil. Aqui cada repositorio e
+// normalizado para peso 1 e contribui com a sua propria composicao interna, de
+// modo que a media reflita no que a pessoa trabalha — nao qual arquivo e maior.
+//
+// Recebe um array de repositorios, cada um com sua lista de {name, size, color}.
+function summariseLanguages(perRepo) {
+  const acc = new Map();
+  let counted = 0;
+
+  for (const langs of perRepo) {
+    const total = langs.reduce((s, l) => s + l.size, 0);
+    if (!total) continue; // repositorio sem codigo detectado
+    counted++;
+    for (const { name, size, color } of langs) {
+      const cur = acc.get(name) ?? { share: 0, color: color || "#8B949E" };
+      cur.share += size / total; // fracao dentro do proprio repositorio
+      if (color) cur.color = color;
+      acc.set(name, cur);
+    }
+  }
+
+  if (!counted) return [];
+  return [...acc.entries()]
+    .map(([name, v]) => ({ name, color: v.color, pct: (v.share / counted) * 100 }))
+    .filter((l) => l.pct >= 0.05) // evita entradas que exibiriam "0.0%"
+    .sort((a, b) => b.pct - a.pct)
+    .slice(0, 8);
+}
+
+// --- Coleta sem token: REST + Search API publica ----------------------------
+async function rest(path) {
+  const res = await fetch(`https://api.github.com${path}`, {
+    headers: { Accept: "application/vnd.github+json", "User-Agent": "readme-stats-generator" },
+  });
+  if (!res.ok) throw new Error(`REST HTTP ${res.status} em ${path}: ${await res.text()}`);
+  return res.json();
+}
+
+async function collectViaRest() {
+  const user = await rest(`/users/${LOGIN}`);
+
+  // Repositorios proprios, ignorando forks.
+  let repos = [], page = 1;
+  for (;;) {
+    const batch = await rest(`/users/${LOGIN}/repos?per_page=100&page=${page}&type=owner`);
+    repos = repos.concat(batch.filter((r) => !r.fork));
+    if (batch.length < 100) break;
+    page++;
+  }
+
+  // Bytes por linguagem: uma chamada por repositorio. Sem autenticacao o limite
+  // e de 60 chamadas por hora — se estourar, cai para a linguagem dominante de
+  // cada repo, que ja veio na listagem e nao custa requisicao nenhuma.
+  let perRepo = [];
+  try {
+    for (const repo of repos) {
+      const langs = await rest(`/repos/${LOGIN}/${repo.name}/languages`);
+      perRepo.push(Object.entries(langs).map(([name, size]) => ({ name, size })));
+    }
+  } catch (err) {
+    if (!String(err.message).includes("HTTP 403")) throw err;
+    console.warn("Rate limit atingido — usando a linguagem dominante de cada repositorio.");
+    perRepo = repos.filter((r) => r.language).map((r) => [{ name: r.language, size: 1 }]);
+  }
+
+  // Search API: totais de commits e pull requests em repositorios publicos.
+  const commits = await rest(`/search/commits?q=author:${LOGIN}&per_page=1`);
+  const prs = await rest(`/search/issues?q=author:${LOGIN}+type:pr&per_page=1`);
+  const issues = await rest(`/search/issues?q=author:${LOGIN}+type:issue&per_page=1`);
+
+  return {
+    contributions: null, // exclusivo da GraphQL
+    reviews: null, //       exclusivo da GraphQL
+    commits: commits.total_count,
+    prs: prs.total_count,
+    issues: issues.total_count,
+    stars: repos.reduce((s, r) => s + r.stargazers_count, 0),
+    repoCount: user.public_repos,
+    followers: user.followers,
+    languages: summariseLanguages(perRepo),
+    source: "REST",
+  };
+}
+
+// --- Coleta com token: GraphQL ---------------------------------------------
+async function collectViaGraphQL() {
   // 1. Perfil e repositorios (paginado).
   let after = null, repos = [], createdAt, followers, repoCount;
   do {
@@ -133,23 +226,20 @@ async function collect() {
     totals.contributions += c.contributionCalendar.totalContributions;
   }
 
-  // 3. Estrelas e distribuicao de linguagens por bytes de codigo.
+  // 3. Estrelas e composicao de linguagens, mantida agrupada por repositorio.
   const stars = repos.reduce((sum, r) => sum + r.stargazerCount, 0);
-  const bytes = new Map();
-  for (const repo of repos) {
-    for (const { size, node } of repo.languages.edges) {
-      const cur = bytes.get(node.name) ?? { size: 0, color: node.color || "#8B949E" };
-      cur.size += size;
-      bytes.set(node.name, cur);
-    }
-  }
-  const totalBytes = [...bytes.values()].reduce((s, v) => s + v.size, 0) || 1;
-  const languages = [...bytes.entries()]
-    .map(([name, v]) => ({ name, color: v.color, pct: (v.size / totalBytes) * 100 }))
-    .sort((a, b) => b.pct - a.pct)
-    .slice(0, 8);
+  const perRepo = repos.map((repo) =>
+    repo.languages.edges.map(({ size, node }) => ({ name: node.name, size, color: node.color }))
+  );
 
-  return { ...totals, stars, repoCount, followers, languages, generatedAt: now };
+  return {
+    ...totals,
+    stars,
+    repoCount,
+    followers,
+    languages: summariseLanguages(perRepo),
+    source: "GraphQL",
+  };
 }
 
 // --- Renderizacao ----------------------------------------------------------
@@ -176,6 +266,8 @@ function shell(w, h, t, title, subtitle, body, ariaLabel) {
 }
 
 function renderStats(d, t) {
+  // Linhas com valor null vem de metricas que so a GraphQL fornece: quando a
+  // coleta foi via REST elas simplesmente nao entram no card.
   const rows = [
     ["Contribuições totais", d.contributions],
     ["Commits", d.commits],
@@ -183,7 +275,9 @@ function renderStats(d, t) {
     ["Code reviews", d.reviews],
     ["Issues", d.issues],
     ["Repositórios públicos", d.repoCount],
-  ];
+    ["Estrelas recebidas", d.stars],
+  ].filter(([, value]) => value !== null && value !== undefined);
+
   const body = rows
     .map(([label, value], i) => {
       const y = 96 + i * 27;
@@ -193,7 +287,8 @@ function renderStats(d, t) {
     })
     .join("\n");
   const alt = `Estatísticas do GitHub de ${LOGIN}: ${rows.map(([l, v]) => `${l} ${fmt(v)}`).join(", ")}.`;
-  return shell(480, 272, t, `Atividade no GitHub`, `@${LOGIN.toUpperCase()}`, body, alt);
+  // Altura acompanha o numero de linhas efetivamente renderizadas.
+  return shell(480, 96 + rows.length * 27 + 22, t, "Atividade no GitHub", `@${LOGIN.toUpperCase()}`, body, alt);
 }
 
 function renderLangs(d, t) {
@@ -223,13 +318,13 @@ function renderLangs(d, t) {
   const rows = Math.ceil(d.languages.length / 2);
   const H = 118 + rows * 24 + 34;
   const note = `  <rect x="${x0}" y="${H - 30}" width="${barW}" height="1" fill="${t.track}"/>
-  <text x="${x0}" y="${H - 12}" font-family="${FONT}" font-size="10.5" fill="${t.label}">Volume de código por linguagem — não indica nível de domínio.</text>`;
-  const alt = `Distribuição de linguagens nos repositórios públicos de ${LOGIN}: ${d.languages.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(", ")}.`;
-  return shell(W, H, t, "Linguagens nos repositórios", "POR VOLUME DE CÓDIGO", `${bar}\n${legend}\n${note}`, alt);
+  <text x="${x0}" y="${H - 12}" font-family="${FONT}" font-size="10.5" fill="${t.label}">Cada repositório pesa igual, para nenhum projeto isolado distorcer o resultado.</text>`;
+  const alt = `Composição média de linguagens por repositório público de ${LOGIN}: ${d.languages.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(", ")}.`;
+  return shell(W, H, t, "Linguagens nos repositórios", "COMPOSIÇÃO MÉDIA POR REPOSITÓRIO", `${bar}\n${legend}\n${note}`, alt);
 }
 
 // --- Execucao --------------------------------------------------------------
-const data = await collect();
+const data = TOKEN ? await collectViaGraphQL() : await collectViaRest();
 await mkdir(OUT_DIR, { recursive: true });
 
 for (const [name, theme] of Object.entries(THEMES)) {
@@ -238,6 +333,6 @@ for (const [name, theme] of Object.entries(THEMES)) {
 }
 
 console.log(
-  `Cards gerados: ${data.contributions} contribuições, ${data.commits} commits, ` +
-    `${data.repoCount} repos, ${data.languages.length} linguagens.`
+  `Cards gerados via ${data.source}: ${fmt(data.commits)} commits, ${fmt(data.prs)} PRs, ` +
+    `${fmt(data.repoCount)} repos, ${data.languages.length} linguagens.`
 );

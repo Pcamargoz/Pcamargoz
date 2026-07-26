@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200" role="img" aria-label="Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 26.3%, TypeScript 10.5%, CSS 5.3%.">
+  <title>Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 26.3%, TypeScript 10.5%, CSS 5.3%.</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/><stop offset="100%" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6DB33F"/><stop offset="100%" stop-color="#58A6FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="419" height="199" rx="12" fill="url(#bg)" stroke="#30363D"/>
+  <path d="M12 1 H408 A11 11 0 0 1 419 12 V4 H1 V12 A11 11 0 0 1 12 1 Z" fill="url(#acc)"/>
+  <rect x="1" y="1" width="418" height="4" fill="url(#acc)"/>
+  <text x="26" y="42" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#6DB33F">Linguagens nos repositórios</text>
+  <text x="26" y="62" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="11" fill="#8B949E" letter-spacing="1.2">COMPOSIÇÃO MÉDIA POR REPOSITÓRIO</text>
+    <rect x="26.00" y="82" width="213.05" height="9" fill="#8B949E"/>
+  <rect x="239.05" y="82" width="96.84" height="9" fill="#8B949E"/>
+  <rect x="335.89" y="82" width="38.74" height="9" fill="#8B949E"/>
+  <rect x="374.63" y="82" width="19.37" height="9" fill="#8B949E"/>
+  <circle cx="31" cy="114" r="5" fill="#8B949E"/>
+  <text x="44" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#E6EDF3">Java</text>
+  <text x="198" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#8B949E">57.9%</text>
+  <circle cx="215" cy="114" r="5" fill="#8B949E"/>
+  <text x="228" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#E6EDF3">HTML</text>
+  <text x="382" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#8B949E">26.3%</text>
+  <circle cx="31" cy="138" r="5" fill="#8B949E"/>
+  <text x="44" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#E6EDF3">TypeScript</text>
+  <text x="198" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#8B949E">10.5%</text>
+  <circle cx="215" cy="138" r="5" fill="#8B949E"/>
+  <text x="228" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#E6EDF3">CSS</text>
+  <text x="382" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#8B949E">5.3%</text>
+  <rect x="26" y="170" width="368" height="1" fill="#21262D"/>
+  <text x="26" y="188" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8B949E">Cada repositório pesa igual, para nenhum projeto isolado distorcer o resultado.</text>
+</svg>

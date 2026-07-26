@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 508" width="900" height="508" role="img" aria-label="Linha do tempo profissional e acadêmica de Pedro César Camargo dos Santos: 2026, Consultor de Implantação, Faktory Softwares; 2026, Estagiário de Implantação, Faktory Softwares; 2025, Análise e Desenvolvimento de Sistemas, Centro Universitário Facens · 2025–2027; 2023, Implantação de Serviços de IA em Nuvem, SENAI-SP; 2021, Informática e Empreendedorismo, Nippo / SENAI-SP.">
+  <title>Linha do tempo profissional e acadêmica de Pedro César Camargo dos Santos: 2026, Consultor de Implantação, Faktory Softwares; 2026, Estagiário de Implantação, Faktory Softwares; 2025, Análise e Desenvolvimento de Sistemas, Centro Universitário Facens · 2025–2027; 2023, Implantação de Serviços de IA em Nuvem, SENAI-SP; 2021, Informática e Empreendedorismo, Nippo / SENAI-SP.</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F6F8FA"/>
+    </linearGradient>
+    <linearGradient id="railGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4C8C2B"/>
+      <stop offset="50%" stop-color="#C56A00"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#475569" stroke-width="0.5" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <style>
+    /* A trilha se desenha de cima para baixo. */
+    @keyframes draw { from { stroke-dashoffset: 368; } to { stroke-dashoffset: 0; } }
+    .rail-fill {
+      stroke-dasharray: 368;
+      animation: draw 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Cada etapa entra deslizando da esquerda, em sequencia. */
+    @keyframes enter { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: translateX(0); } }
+    .item { opacity: 0; animation: enter 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) forwards; }
+
+    /* Anel que pulsa uma vez quando a etapa e alcancada. */
+    @keyframes halo { 0% { opacity: 0.85; stroke-width: 2; r: 19; } 100% { opacity: 0; stroke-width: 0.5; r: 30; } }
+    .halo { opacity: 0; animation: halo 1.1s ease-out forwards; }
+
+    .i0 { animation-delay: 0.45s; }
+    .h0 { animation-delay: 0.45s; }
+    .i1 { animation-delay: 0.73s; }
+    .h1 { animation-delay: 0.73s; }
+    .i2 { animation-delay: 1.01s; }
+    .h2 { animation-delay: 1.01s; }
+    .i3 { animation-delay: 1.29s; }
+    .h3 { animation-delay: 1.29s; }
+    .i4 { animation-delay: 1.57s; }
+    .h4 { animation-delay: 1.57s; }
+
+    /* Brilho continuo percorrendo a trilha — mantem o card vivo apos a entrada. */
+    @keyframes travel { 0% { opacity: 0; cy: 76px; } 12% { opacity: 0.9; } 88% { opacity: 0.9; } 100% { opacity: 0; cy: 444px; } }
+    .spark { animation: travel 5.5s ease-in-out 2.6s infinite; opacity: 0; }
+
+    /* Vapor da xicara. */
+    @keyframes steam { 0% { opacity: 0; transform: translateY(2px); } 40% { opacity: 0.85; } 100% { opacity: 0; transform: translateY(-4px); } }
+    .steam { opacity: 0; animation: steam 2.6s ease-out infinite; }
+    .s2 { animation-delay: 1.3s; }
+
+    /* Sem movimento: tudo ja visivel, trilha inteira desenhada. */
+    @media (prefers-reduced-motion: reduce) {
+      .item, .rail-fill, .halo, .spark, .steam { animation: none; }
+      .item { opacity: 1; }
+      .rail-fill { stroke-dashoffset: 0; }
+      .halo, .spark { opacity: 0; }
+      .steam { opacity: 0.85; }
+    }
+  </style>
+
+  <rect width="900" height="508" rx="14" fill="url(#bg)" stroke="#D0D7DE"/>
+  <rect width="900" height="508" rx="14" fill="url(#grid)"/>
+
+  <!-- Trilha: base apagada + traco colorido que se desenha por cima. -->
+  <line x1="104" y1="76" x2="104" y2="444" stroke="#D8DEE4" stroke-width="2"/>
+  <line class="rail-fill" x1="104" y1="76" x2="104" y2="444" stroke="url(#railGrad)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle class="spark" cx="104" cy="76" r="3.5" fill="#C56A00"/>
+
+  <g class="item i0" color="#4C8C2B">
+    <text x="72" y="81" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#4C8C2B">2026</text>
+    <circle cx="104" cy="76" r="19" fill="#FFFFFF" stroke="#4C8C2B" stroke-width="2"/>
+    <circle class="halo h0" cx="104" cy="76" r="19" fill="none" stroke="#4C8C2B" stroke-width="2"/>
+    <g transform="translate(104 76)" fill="#4C8C2B" color="#4C8C2B"><rect x="-7.5" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="-7.5" width="6.5" height="6.5" rx="1.2"/><rect x="-7.5" y="1" width="6.5" height="6.5" rx="1.2"/><rect x="1" y="1" width="6.5" height="6.5" rx="1.2" opacity="0.45"/></g>
+    <text x="146" y="73" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0F172A">Consultor de Implantação</text>
+    <text x="146" y="92" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#4C8C2B" letter-spacing="0.4">Faktory Softwares</text>
+    <text x="146" y="111" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">Implantação de ERP, treinamento de usuários e validação de produto. Linha de frente do Faktory Flow.</text>
+  </g>
+  <g class="item i1" color="#1F86A8">
+    <text x="72" y="173" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#1F86A8">2026</text>
+    <circle cx="104" cy="168" r="19" fill="#FFFFFF" stroke="#1F86A8" stroke-width="2"/>
+    <circle class="halo h1" cx="104" cy="168" r="19" fill="none" stroke="#1F86A8" stroke-width="2"/>
+    <g transform="translate(104 168)" fill="#1F86A8" color="#1F86A8"><path d="M-6 -5 L6 -5 M-6 -5 L0 6 M6 -5 L0 6" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.6"/><circle cx="-6" cy="-5" r="2.6"/><circle cx="6" cy="-5" r="2.6"/><circle cx="0" cy="6" r="2.6"/></g>
+    <text x="146" y="165" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0F172A">Estagiário de Implantação</text>
+    <text x="146" y="184" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#1F86A8" letter-spacing="0.4">Faktory Softwares</text>
+    <text x="146" y="203" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">Análise de processos, parametrização de sistema e produção de conteúdo técnico.</text>
+  </g>
+  <g class="item i2" color="#C56A00">
+    <text x="72" y="265" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#C56A00">2025</text>
+    <circle cx="104" cy="260" r="19" fill="#FFFFFF" stroke="#C56A00" stroke-width="2"/>
+    <circle class="halo h2" cx="104" cy="260" r="19" fill="none" stroke="#C56A00" stroke-width="2"/>
+    <g transform="translate(104 260)" fill="#C56A00" color="#C56A00"><path class="steam s1" d="M-3.5 -6.5 q2 -2.5 0 -5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path class="steam s2" d="M1 -6.5 q2 -2.5 0 -5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M-7 -3 H4 V2.5 A4.5 4.5 0 0 1 -0.5 7 H-2.5 A4.5 4.5 0 0 1 -7 2.5 Z"/><path d="M4.4 -1.5 H6 A2.6 2.6 0 0 1 6 3.6 H4.4" fill="none" stroke="currentColor" stroke-width="1.5"/></g>
+    <text x="146" y="257" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0F172A">Análise e Desenvolvimento de Sistemas</text>
+    <text x="146" y="276" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#C56A00" letter-spacing="0.4">Centro Universitário Facens · 2025–2027</text>
+    <text x="146" y="295" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">Representante de turma. Foco em engenharia de back-end com Java e Spring.</text>
+  </g>
+  <g class="item i3" color="#1E6FD9">
+    <text x="72" y="357" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#1E6FD9">2023</text>
+    <circle cx="104" cy="352" r="19" fill="#FFFFFF" stroke="#1E6FD9" stroke-width="2"/>
+    <circle class="halo h3" cx="104" cy="352" r="19" fill="none" stroke="#1E6FD9" stroke-width="2"/>
+    <g transform="translate(104 352)" fill="#1E6FD9" color="#1E6FD9"><circle cx="-3.5" cy="0" r="4.6"/><circle cx="2.5" cy="-1.5" r="5.4"/><rect x="-8" y="0" width="15" height="5" rx="2.5"/></g>
+    <text x="146" y="349" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0F172A">Implantação de Serviços de IA em Nuvem</text>
+    <text x="146" y="368" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#1E6FD9" letter-spacing="0.4">SENAI-SP</text>
+    <text x="146" y="387" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">Inglês como Segundo Idioma · Nippo / Pearson · 2023–2024.</text>
+  </g>
+  <g class="item i4" color="#64748B">
+    <text x="72" y="449" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#64748B">2021</text>
+    <circle cx="104" cy="444" r="19" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+    <circle class="halo h4" cx="104" cy="444" r="19" fill="none" stroke="#64748B" stroke-width="2"/>
+    <g transform="translate(104 444)" fill="#64748B" color="#64748B"><rect x="-8.5" y="-7" width="17" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M-5 -3 L-1.5 0 L-5 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M0.5 3.2 H5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></g>
+    <text x="146" y="441" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#0F172A">Informática e Empreendedorismo</text>
+    <text x="146" y="460" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#64748B" letter-spacing="0.4">Nippo / SENAI-SP</text>
+    <text x="146" y="479" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">Base técnica inicial e primeiro contato com desenvolvimento.</text>
+  </g>
+
+  <text x="146" y="484" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="11" fill="#475569" letter-spacing="1.6">PRÓXIMO PASSO · ARQUITETURA · SISTEMAS DISTRIBUÍDOS · CLOUD</text>
+  <circle cx="104" cy="480" r="4" fill="none" stroke="#4C8C2B" stroke-width="1.5" stroke-dasharray="2.5 2.5"/>
+</svg>
