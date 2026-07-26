@@ -73,11 +73,7 @@
       "PowerShell(foreach \\($f in @\\(\"timeline-dark\",\"timeline-light\"\\)\\) { $p=\"assets\\\\$f.svg\"; try { [xml]\\([System.IO.File]::ReadAllText\\(\\(Resolve-Path $p\\)\\)\\) | Out-Null; Write-Output \"XML OK: $f\" } catch { Write-Output \"FALHOU: $f -> $\\($_.Exception.Message\\)\" } })",
       "Bash(node .github/scripts/generate-timeline.mjs)",
       "Bash(node --check .github/scripts/generate-timeline.mjs)",
-      "Bash(gh auth *)",
-      "Read(//tmp/**)",
-      "Bash(awk '{s+=$1} END {print \"Total publico \\(anonimo\\):\", s}')",
-      "Bash(awk '{s+=$1} END {print \"Total publico:\", s, \"dias com atividade:\", NR}')",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/Platane/snk/v3/action.yml\")"
+      "PowerShell(foreach \\($f in @\\(\"timeline-dark\",\"timeline-light\"\\)\\) { $p=\"assets\\\\$f.svg\"; try { $null=[xml]\\([System.IO.File]::ReadAllText\\(\\(Resolve-Path $p\\)\\)\\); Write-Output \"XML OK: $f\" } catch { Write-Output \"FALHOU: $f\" } })"
     ]
   }
 }

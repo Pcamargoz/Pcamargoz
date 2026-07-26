@@ -49,8 +49,8 @@ const ITEMS = [
     org: "Faktory Softwares",
     desc: "Análise de processos, parametrização de sistema e produção de conteúdo técnico.",
   },
-  // Os dois marcos abaixo formam o bloco de 2025: o ano aparece uma vez so e
-  // um trecho mais espesso da trilha liga os dois nos.
+  // Os dois marcos abaixo formam o bloco de 2025: ambos exibem o ano, e um
+  // trecho mais espesso da trilha liga os dois nos.
   {
     year: "2025", icon: "medalha", tone: 2, groupStart: true,
     title: "Profissionalização em Desenvolvimento",
@@ -58,7 +58,7 @@ const ITEMS = [
     desc: "Trilhas de back-end, cloud, banco de dados e boas práticas de engenharia.",
   },
   {
-    year: "", icon: "cafe", tone: 2, groupEnd: true,
+    year: "2025", icon: "cafe", tone: 2, groupEnd: true,
     title: "Análise e Desenvolvimento de Sistemas",
     org: "Centro Universitário Facens · 2025–2027",
     desc: "Representante de turma. Foco em engenharia de back-end com Java e Spring.",
