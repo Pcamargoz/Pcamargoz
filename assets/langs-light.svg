@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 224" width="420" height="224" role="img" aria-label="Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 21.5%, TypeScript 11.4%, CSS 7.6%, JavaScript 1.5%.">
-  <title>Composição média de linguagens por repositório público de Pcamargoz: Java 57.9%, HTML 21.5%, TypeScript 11.4%, CSS 7.6%, JavaScript 1.5%.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 224" width="420" height="224" role="img" aria-label="Composição média de linguagens por repositório público de Pcamargoz: Java 61.1%, HTML 17.3%, TypeScript 12.0%, CSS 8.0%, JavaScript 1.5%.">
+  <title>Composição média de linguagens por repositório público de Pcamargoz: Java 61.1%, HTML 17.3%, TypeScript 12.0%, CSS 8.0%, JavaScript 1.5%.</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F6F8FA"/>
@@ -14,23 +14,23 @@
   <rect x="1" y="1" width="418" height="4" fill="url(#acc)"/>
   <text x="26" y="42" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#4C8C2B">Linguagens nos repositórios</text>
   <text x="26" y="62" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="11" fill="#475569" letter-spacing="1.2">COMPOSIÇÃO MÉDIA POR REPOSITÓRIO</text>
-    <rect x="26.00" y="82" width="212.89" height="9" fill="#b07219"/>
-  <rect x="238.89" y="82" width="79.29" height="9" fill="#e34c26"/>
-  <rect x="318.19" y="82" width="41.98" height="9" fill="#3178c6"/>
-  <rect x="360.17" y="82" width="28.04" height="9" fill="#663399"/>
-  <rect x="388.20" y="82" width="5.64" height="9" fill="#f1e05a"/>
+    <rect x="26.00" y="82" width="224.72" height="9" fill="#b07219"/>
+  <rect x="250.72" y="82" width="63.52" height="9" fill="#e34c26"/>
+  <rect x="314.25" y="82" width="44.31" height="9" fill="#3178c6"/>
+  <rect x="358.56" y="82" width="29.59" height="9" fill="#663399"/>
+  <rect x="388.15" y="82" width="5.68" height="9" fill="#f1e05a"/>
   <circle cx="31" cy="114" r="5" fill="#b07219"/>
   <text x="44" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">Java</text>
-  <text x="198" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">57.9%</text>
+  <text x="198" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">61.1%</text>
   <circle cx="215" cy="114" r="5" fill="#e34c26"/>
   <text x="228" y="118" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">HTML</text>
-  <text x="382" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">21.5%</text>
+  <text x="382" y="118" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">17.3%</text>
   <circle cx="31" cy="138" r="5" fill="#3178c6"/>
   <text x="44" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">TypeScript</text>
-  <text x="198" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">11.4%</text>
+  <text x="198" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">12.0%</text>
   <circle cx="215" cy="138" r="5" fill="#663399"/>
   <text x="228" y="142" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">CSS</text>
-  <text x="382" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">7.6%</text>
+  <text x="382" y="142" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">8.0%</text>
   <circle cx="31" cy="162" r="5" fill="#f1e05a"/>
   <text x="44" y="166" font-family="'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0F172A">JavaScript</text>
   <text x="198" y="166" text-anchor="end" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Mono', Menlo, Consolas, monospace" font-size="12" fill="#475569">1.5%</text>
